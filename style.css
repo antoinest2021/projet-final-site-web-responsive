@@ -1,0 +1,9 @@
+nav{
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#produits .row {
+  --bs-gutter-x: 20px;
+}
