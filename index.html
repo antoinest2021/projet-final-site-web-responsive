@@ -1,117 +1,230 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Acceuil</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Tableau de bord</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Demande crédit</a>
-            </li>
-          </ul>
-          <div class="m-2">
-            <button type="button" class="btn btn-primary" disabled>
-              Connexion
-            </button>
-          </div>
-          <div>
-            <button type="button" class="btn btn-primary" disabled>
-              Incription
-            </button>
-          </div>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLEXYBANQUE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg px-4 sticky-top"
+    style="background-color: var(--bg-card); border-bottom: 1px solid var(--border-color);" data-bs-theme="dark">
+    <div class="container-fluid p-0">
+      <a class="navbar-brand text-white d-flex align-items-center gap-2 fw-bold" href="#">
+        <i class="bi bi-bank" style="color: var(--primary-blue);"></i> FlexyBanque
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Acceuil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted-custom" href="#">Tableau de bord</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted-custom" href="#">Demande crédit</a>
+          </li>
+        </ul>
+        <div class="d-flex gap-3">
+          <button type="button" class="btn btn-outline-custom">Connexion</button>
+          <button type="button" class="btn btn-primary-custom">Inscription</button>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <section id="produits" class="container-fluid">
-      <h2 class="text-center m-4">Nos produits bancaires</h2>
-      <div class="row ">
-        <div class="col-12 col-md-4">
-         <div class="card ">
-          <div class="card-body">
-            <h5 class="card-title">Carte de crédit</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">
-              Flexy-Carte
-            </h6>
-            <p class="card-text">
-              Notre Flexy-Carte offre plein d'avantage à un taux de crédit très avantageux!
+  <div class="container-fluid px-4 px-lg-5 py-5">
+    <main class="card-custom p-4 p-md-5">
+      <div class="mb-5 mt-3 pb-4">
+        <h1 class="fw-bold mb-5 pb-3 pb-lg-5 text-center display-5 text-uppercase">FlexyBanque : La néo-banque qui s'adapte à vous</h1>
+
+        <div class="row align-items-center gx-lg-5 gy-5">
+          <div class="col-12 col-lg-6 text-center">
+            <img src="Images/hero-image.png" alt="Illustration Néo-banque FlexyBanque" class="img-fluid rounded-4"
+              style="border: 1px solid var(--border-color); aspect-ratio: 1 / 1; object-fit: cover; max-width: 400px; width: 100%;">
+          </div>
+
+          <div class="col-12 col-lg-6 px-lg-5">
+            <h3 class="fw-bold text-white mb-3">Les meilleurs taux du marché, sans compromis.</h3>
+            <p class="text-muted-custom fs-5 mb-4">
+              Profitez des taux d'intérêt les plus bas du marché avec une flexibilité totale. Des solutions sur-mesure
+              conçues pour booster vos finances et réaliser vos projets.
             </p>
-            <a href="#" class="card-link">Faire une demande en ligne</a>
-            <a href="#" class="card-link">Voir les détails</a>
+            <div class="d-flex gap-3 flex-wrap justify-content-center justify-content-lg-start">
+              <button class="btn btn-primary-custom btn-lg">Ouvrir un compte</button>
+              <button class="btn btn-outline-custom btn-lg">Voir nos offres</button>
             </div>
           </div>
         </div>
-         
-        <div class=" col-12 col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">
-              Card subtitle
-            </h6>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card’s content.
-            </p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+      </div>
+      <div class="mt-5 pt-4 mb-5 pb-4">
+        <h2 class="fw-bold text-center text-white mb-5">L'avantage FlexyBanque</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <div class="card card-custom h-100 p-4 text-center">
+              <div class="card-body p-0">
+                <i class="bi bi-graph-down card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+                <h5 class="card-title text-white fw-bold mb-3">Taux imbattables</h5>
+                <p class="card-text text-muted-custom">Bénéficiez des taux d'intérêt les plus bas du marché pour faire
+                  fructifier votre argent sans effort.</p>
+              </div>
+            </div>
           </div>
-        </div>
-        </div>
-         
-        <div class="col-12 col-md-4">
-        <div class="card  ">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">
-              Card subtitle
-            </h6>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card’s content.
-            </p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+          <div class="col-12 col-md-4">
+            <div class="card card-custom h-100 p-4 text-center">
+              <div class="card-body p-0">
+                <i class="bi bi-phone card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+                <h5 class="card-title text-white fw-bold mb-3">100% Numérique</h5>
+                <p class="card-text text-muted-custom">Gérez vos comptes et vos investissements d'un simple clic grâce à
+                  notre application mobile intuitive.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card card-custom h-100 p-4 text-center">
+              <div class="card-body p-0">
+                <i class="bi bi-shield-check card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+                <h5 class="card-title text-white fw-bold mb-3">Sécurité maximale</h5>
+                <p class="card-text text-muted-custom">Vos données et votre argent sont protégés en permanence par les
+                  dernières technologies de chiffrement.</p>
+              </div>
+            </div>
           </div>
         </div>
 
+        <div class="row justify-content-center mt-5">
+          <div class="col-12 col-lg-10 text-center">
+            <h4 class="fw-bold text-white mb-3">Pourquoi choisir FlexyBanque ?</h4>
+            <p class="text-muted-custom fs-5 mb-0">
+              Chez FlexyBanque, nous croyons qu'une banque doit travailler pour vous, et non l'inverse. En éliminant les
+              frais cachés et les succursales physiques superflues, nous réinvestissons ces économies directement dans
+              vos poches. Que vous souhaitiez épargner pour un projet de vie, financer la croissance de votre
+              entreprise, ou optimiser vos stratégies de trading, nous mettons à votre disposition des outils puissants,
+              transparents et taillés sur mesure pour vous faire atteindre vos objectifs financiers plus rapidement.
+            </p>
+          </div>
+        </div>
       </div>
-    </section>
-  </body>
+      <h2 class="fw-bold text-white text-center mb-5 mt-5 pt-5">Nos produits bancaires</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-custom h-100 p-4 text-center">
+            <div class="card-body p-0 d-flex flex-column">
+              <i class="bi bi-credit-card card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+              <h5 class="card-title text-white fw-bold mb-3">Flexy-carte</h5>
+              <p class="card-text text-muted-custom mb-4">Notre carte de crédit premium avec un taux avantageux dès
+                12,9%.</p>
+              <a href="#" class="link-custom mt-auto">Ouvrir un compte</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-custom h-100 p-4 text-center">
+            <div class="card-body p-0 d-flex flex-column">
+              <i class="bi bi-wallet2 card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+              <h5 class="card-title text-white fw-bold mb-3">Compte Flexychèque</h5>
+              <p class="card-text text-muted-custom mb-4">Votre compte chèque du quotidien, conçu pour être 100% sans
+                frais cachés.</p>
+              <a href="#" class="link-custom mt-auto">Ouvrir un compte</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-custom h-100 p-4 text-center">
+            <div class="card-body p-0 d-flex flex-column">
+              <i class="bi bi-cash-stack card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+              <h5 class="card-title text-white fw-bold mb-3">Marge de crédit</h5>
+              <p class="card-text text-muted-custom mb-4">Une ligne de crédit ultra-flexible, parfaitement adaptée à vos
+                besoins et projets.</p>
+              <a href="#" class="link-custom mt-auto">Faire une demande</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-custom h-100 p-4 text-center">
+            <div class="card-body p-0 d-flex flex-column">
+              <i class="bi bi-piggy-bank card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+              <h5 class="card-title text-white fw-bold mb-3">FlexÉpargne</h5>
+              <p class="card-text text-muted-custom mb-4">Un compte épargne à taux élevé pour faire fructifier votre
+                argent sans effort.</p>
+              <a href="#" class="link-custom mt-auto">Ouvrir un compte</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="mt-5 pt-5 pb-4" style="background-color: var(--bg-card); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-12 col-lg-4">
+          <a class="navbar-brand text-white fw-bold fs-4 d-flex align-items-center mb-3" href="#"
+            style="text-decoration: none;">
+            <i class="bi bi-bank text-primary me-2"></i> FlexyBanque
+          </a>
+          <p class="text-muted-custom">
+            La néo-banque conçue pour votre réussite financière. Profitez des meilleurs taux et d'une expérience 100%
+            numérique sans compromis sur la sécurité.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-2 offset-lg-2">
+          <h6 class="text-white fw-bold mb-3">Produits</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Flexy-carte</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Flexychèque</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Marge de crédit</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Épargne</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">À propos</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Notre histoire</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Carrières</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Presse</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Nous joindre</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Légal</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Confidentialité</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Conditions</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Sécurité</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr style="border-color: var(--border-color); margin-top: 3rem; margin-bottom: 1.5rem;">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="text-muted-custom mb-3 mb-md-0 small">
+          &copy; 2026 FlexyBanque. Tous droits réservés.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</body>
+
 </html>

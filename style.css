@@ -1,9 +1,117 @@
-nav{
-    justify-content: center;
-    align-items: center;
-    
+:root {
+  --bg-page: #18181b;
+  --bg-card: #27272a;
+  --border-color: #3f3f46;
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --primary-blue: #3b82f6;
+  --primary-blue-hover: #2563eb;
+  --success-green: #22c55e;
+  --success-bg: rgba(34, 197, 94, 0.15);
 }
 
-#produits .row {
-  --bs-gutter-x: 20px;
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* =========================================
+   Classes CSS Réutilisables (Design System)
+   ========================================= */
+
+/* Conteneurs et Cartes */
+.card-custom {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+/* Typographie */
+.text-muted-custom {
+  color: var(--text-muted) !important;
+}
+
+.link-custom {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-custom:hover {
+  text-decoration: underline;
+  color: var(--primary-blue-hover);
+}
+
+/* Boutons */
+.btn-primary-custom {
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--primary-blue-hover);
+  color: white;
+}
+
+.btn-outline-custom {
+  background-color: transparent;
+  color: white;
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--border-color);
+  color: white;
+}
+
+/* Formulaires */
+.input-custom {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.input-custom:focus {
+  background-color: transparent;
+  border-color: var(--primary-blue);
+  color: var(--text-main);
+  box-shadow: none;
+  outline: none;
+}
+
+.input-custom::placeholder {
+  color: var(--text-muted);
+}
+
+/* Badges & Icônes */
+.badge-secure {
+  background-color: var(--success-bg);
+  color: var(--success-green);
+  border: 1px solid var(--success-green);
+  font-weight: 500;
+  padding: 0.5em 1em;
+}
+
+.card-icon {
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Navbar Shadow */
+.navbar {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  border-bottom-color: transparent !important;
 }
