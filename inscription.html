@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscription: FlexyBanque</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg px-4 sticky-top"
+    style="background-color: var(--bg-card); border-bottom: 1px solid var(--border-color);" data-bs-theme="dark">
+    <div class="container-fluid p-0">
+      <a class="navbar-brand text-white d-flex align-items-center gap-2 fw-bold" href="index.html">
+        <i class="bi bi-bank" style="color: var(--primary-blue);"></i> FlexyBanque
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-muted-custom" href="index.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted-custom" href="tableau-de-bord.html">Tableau de bord</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted-custom" href="demande-credit.html">Demande crédit</a>
+          </li>
+        </ul>
+        <div class="d-flex gap-3">
+          <a href="connexion.html" class="btn btn-outline-custom">Connexion</a>
+          <a href="inscription.html" class="btn btn-primary-custom">Inscription</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid px-4 px-lg-5 py-5">
+    <main class="card-custom p-4 p-md-5">
+      <h2 class="fw-bold text-white text-center mb-2 mt-3">Inscription</h2>
+      <p class="text-center text-muted-custom mb-5">Remplissez ce formulaire pour ouvrir un compte avec FlexyBanque</p>
+      <form id="form-inscription" class="needs-validation" data-bs-theme="dark" novalidate>
+        <div class="row g-3">
+          <!-- Nom et Prénom -->
+          <div class="col-md-6">
+            <label for="prenom" class="form-label text-white">Prénom <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="prenom" required>
+          </div>
+          <div class="col-md-6">
+            <label for="nom" class="form-label text-white">Nom <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="nom" required>
+          </div>
+
+          <!-- Courriel -->
+          <div class="col-12">
+            <label for="courriel" class="form-label text-white">Adresse courriel <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="courriel" required>
+          </div>
+
+          <!-- Téléphone et NAS -->
+          <div class="col-md-6">
+            <label for="telephone" class="form-label text-white">Numéro de téléphone <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" id="telephone" required>
+          </div>
+          <div class="col-md-6">
+            <label for="nas" class="form-label text-white">Numéro d'assurance sociale (NAS) <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="nas" required>
+          </div>
+
+          <!-- Adresse de résidence -->
+          <div class="col-12 mt-4">
+            <h5 class="text-white border-bottom border-secondary pb-2">Adresse de résidence</h5>
+          </div>
+          <div class="col-12">
+            <label for="adresse" class="form-label text-white">Adresse (Numéro et rue, app.) <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="adresse" required>
+          </div>
+          <div class="col-md-6">
+            <label for="ville" class="form-label text-white">Ville <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="ville" required>
+          </div>
+          <div class="col-md-4">
+            <label for="province" class="form-label text-white">Province <span class="text-danger">*</span></label>
+            <select id="province" class="form-select" required>
+              <option selected disabled value="">Choisir...</option>
+              <option value="AB">Alberta</option>
+              <option value="BC">Colombie-Britannique</option>
+              <option value="PE">Île-du-Prince-Édouard</option>
+              <option value="MB">Manitoba</option>
+              <option value="NB">Nouveau-Brunswick</option>
+              <option value="NS">Nouvelle-Écosse</option>
+              <option value="NU">Nunavut</option>
+              <option value="ON">Ontario</option>
+              <option value="QC">Québec</option>
+              <option value="SK">Saskatchewan</option>
+              <option value="NL">Terre-Neuve-et-Labrador</option>
+              <option value="NT">Territoires du Nord-Ouest</option>
+              <option value="YT">Yukon</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="codePostal" class="form-label text-white">Code postal <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="codePostal" required>
+          </div>
+
+          <!-- Type de client -->
+          <div class="col-12 mt-4">
+            <h5 class="text-white border-bottom border-secondary pb-2">Profil</h5>
+          </div>
+          <div class="col-12">
+            <label class="form-label text-white d-block mb-3">Quel type de client êtes-vous ? <span class="text-danger">*</span></label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="typeClient" id="typeEtudiant" value="etudiant" required>
+              <label class="form-check-label text-muted-custom" for="typeEtudiant">Étudiant</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="typeClient" id="typeEmploye" value="employe">
+              <label class="form-check-label text-muted-custom" for="typeEmploye">Employé</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="typeClient" id="typeEntrepreneur" value="entrepreneur">
+              <label class="form-check-label text-muted-custom" for="typeEntrepreneur">Entrepreneur</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="typeClient" id="typeTrader" value="trader">
+              <label class="form-check-label text-muted-custom" for="typeTrader">Trader</label>
+            </div>
+          </div>
+
+          <!-- Mot de passe -->
+          <div class="col-12 mt-4">
+            <h5 class="text-white border-bottom border-secondary pb-2">Sécurité</h5>
+          </div>
+          <div class="col-md-6">
+            <label for="mdp" class="form-label text-white">Mot de passe <span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="mdp" required>
+          </div>
+          <div class="col-md-6">
+            <label for="mdpConfirm" class="form-label text-white">Confirmer le mot de passe <span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="mdpConfirm" required>
+          </div>
+
+          <!-- Conditions -->
+          <div class="col-12 mt-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="conditions" required>
+              <label class="form-check-label text-muted-custom" for="conditions">
+                J'accepte les <a href="#" class="link-custom">conditions d'utilisation</a> de FlexyBanque. <span class="text-danger">*</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Boutons -->
+          <div class="col-12 mt-4 d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary-custom px-4 py-2" type="submit">Ouvrir mon compte</button>
+            <button class="btn btn-outline-secondary px-4 py-2 text-white" type="reset">Réinitialiser</button>
+          </div>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <footer class="mt-5 pt-5 pb-4" style="background-color: var(--bg-card); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-12 col-lg-4">
+          <a class="navbar-brand text-white fw-bold fs-4 d-flex align-items-center mb-3" href="index.html"
+            style="text-decoration: none;">
+            <i class="bi bi-bank text-primary me-2"></i> FlexyBanque
+          </a>
+          <p class="text-muted-custom">
+            La néo-banque conçue pour votre réussite financière. Profitez des meilleurs taux et d'une expérience 100%
+            numérique sans compromis sur la sécurité.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-2 offset-lg-2">
+          <h6 class="text-white fw-bold mb-3">Produits</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Flexy-carte</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Flexychèque</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Marge de crédit</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Épargne</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">À propos</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Notre histoire</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Carrières</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Presse</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Nous joindre</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Légal</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Confidentialité</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Conditions</a></li>
+            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Sécurité</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr style="border-color: var(--border-color); margin-top: 3rem; margin-bottom: 1.5rem;">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="text-muted-custom mb-3 mb-md-0 small">
+          &copy; 2026 FlexyBanque. Tous droits réservés.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="inscription.js"></script>
+</body>
+</html>
