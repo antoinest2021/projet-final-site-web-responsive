@@ -16,16 +16,10 @@ $(document).ready(function() {
         e.preventDefault();
 
         const courriel = $("#courriel").val().trim();
-        const motDePasse = $("#motDePasse").val();
-        const regexCourriel = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        const motDePasse = $("#motDePasse").val();   
         let valide = true;
 
-        if (!regexCourriel.test(courriel)) {
-            $("#courriel").addClass("is-invalid");
-            valide = false;
-        } else {
-            $("#courriel").removeClass("is-invalid");
-        }
+     
 
         if (motDePasse.length < 8) {
             $("#motDePasse").addClass("is-invalid");
