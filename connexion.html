@@ -43,7 +43,40 @@
   <div class="container-fluid px-4 px-lg-5 py-5">
     <main class="card-custom p-4 p-md-5">
       <h2 class="fw-bold text-white text-center mb-5 mt-3">Connexion</h2>
-      <!-- Formulaire de connexion à venir -->
+      <!--Formulaire inseré-->
+       <div class="row justify-content-center">
+  <div class="col-12 col-md-8 col-lg-5">
+
+    <form id="formConnexion" novalidate>
+      <div class="mb-3">
+        <label for="courriel" class="form-label text-white">Courriel</label>
+        <input type="email" class="form-control" id="courriel" placeholder="nom@exemple.com">
+        <div class="invalid-feedback">Veuillez entrer un courriel valide.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="motDePasse" class="form-label text-white">Mot de passe</label>
+        <input type="password" class="form-control" id="motDePasse">
+        <div class="invalid-feedback">Le mot de passe doit contenir au moins 8 caractères.</div>
+      </div>
+
+      <div class="form-check mb-4">
+        <input class="form-check-input" type="checkbox" id="souvenir">
+        <label class="form-check-label text-muted-custom" for="souvenir">Se souvenir de moi</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary-custom w-100">Se connecter</button>
+
+      <p class="text-muted-custom text-center mt-4 mb-0">
+        Pas encore de compte ?
+        <a href="inscription.html" class="text-decoration-none">S'inscrire</a>
+      </p>
+    </form>
+
+    <div id="message" class="alert mt-4 d-none" role="alert"></div>
+
+  </div>
+</div>
     </main>
   </div>
 
