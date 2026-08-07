@@ -1,57 +1,512 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tableau de bord: FlexyBanque</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg px-4 sticky-top"
-    style="background-color: var(--bg-card); border-bottom: 1px solid var(--border-color);" data-bs-theme="dark">
-    <div class="container-fluid p-0">
-      <a class="navbar-brand text-white d-flex align-items-center gap-2 fw-bold" href="index.html">
-        <i class="bi bi-bank" style="color: var(--primary-blue);"></i> FlexyBanque
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-muted-custom" href="index.html">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="tableau-de-bord.html">Tableau de bord</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-muted-custom" href="demande-credit.html">Demande crédit</a>
-          </li>
-        </ul>
-        <div class="d-flex gap-3">
-          <a href="connexion.html" class="btn btn-outline-custom">Connexion</a>
-          <a href="inscription.html" class="btn btn-primary-custom">Inscription</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de bord: FlexyBanque</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg px-4 sticky-top"
+      style="
+        background-color: var(--bg-card);
+        border-bottom: 1px solid var(--border-color);
+      "
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid p-0">
+        <a
+          class="navbar-brand text-white d-flex align-items-center gap-2 fw-bold"
+          href="index.html"
+        >
+          <i class="bi bi-bank" style="color: var(--primary-blue)"></i>
+          FlexyBanque
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-muted-custom" href="index.html"
+                >Accueil</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active text-white"
+                aria-current="page"
+                href="tableau-de-bord.html"
+                >Tableau de bord</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted-custom" href="demande-credit.html"
+                >Demande crédit</a
+              >
+            </li>
+          </ul>
+          <div class="d-flex gap-3">
+            <a href="connexion.html" class="btn btn-outline-custom"
+              >Connexion</a
+            >
+            <a href="inscription.html" class="btn btn-primary-custom"
+              >Inscription</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid px-4 px-lg-5 py-5">
+      <main class="card-custom p-4 p-md-5">
+        <h2 class="fw-bold text-white text-center mb-5 mt-3">
+          Tableau de bord
+        </h2>
+
+        <div class="row justify-content-center mb-5">
+  <div class="col-12 col-md-8 col-lg-6">
+    <div class="card card-custom p-4 text-center">
+      <div class="card-body p-0 d-flex flex-column align-items-center">
+        <i class="bi bi-person-circle mb-3" style="font-size: 3rem; color: var(--primary-blue);"></i>
+        <h5 class="text-white fw-bold mb-1">Jean Tremblay</h5>
+        <p class="text-muted-custom mb-3 small">jean.tremblay@courriel.com</p>
+
+        <div class="bg-white rounded shadow-sm p-3 text-dark text-start w-100">
+          <p class="mb-1 small"><strong>N° client :</strong> CL-0001234</p>
+          <p class="mb-1 small"><strong>Membre depuis :</strong> Mars 2024</p>
+          <p class="mb-1 small"><strong>adresse:</strong> 231 rue Jolie, Ville D'or</p>
+          <p class="mb-1 small"><strong>No tel :</strong> 418-555-5555</p>
+          <p class="mb-0 small"><strong>Statut du client :</strong> Actif</p>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</div>
+        <!-- Compte FlexyCarte -->
 
-  <div class="container-fluid px-4 px-lg-5 py-5">
-    <main class="card-custom p-4 p-md-5">
-      <h2 class="fw-bold text-white text-center mb-5 mt-3">Tableau de bord</h2>
-      <!-- Contenu du tableau de bord à venir -->
-    </main>
+
+         <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-custom h-100 p-4 text-center">
+            <div class="card-body p-0 d-flex flex-column">
+              <i class="bi bi-credit-card card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+              <h5 class="card-title text-white fw-bold mb-3">Flexy-carte</h5>
+              
+              <div class="bg-white rounded shadow-sm p-3 mb-3 text-dark text-start">
+                <p class="mb-1 small">N° carte : 4589-1234-5678-9012</p>
+                <p class="mb-1 small">Paiement dû:</p>
+                <p class="mb-0 small">Solde de la carte: <span id="soldeCarteAffiche"></span></p>
+              </div>
+              <a href="#" class="link-custom mt-auto" data-bs-toggle="modal" data-bs-target="#modalFlexyCarte">Voir les détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compte FlexyCheque -->
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-custom h-100 p-4 text-center">
+            <div class="card-body p-0 d-flex flex-column">
+              <i class="bi bi-wallet2 card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+              <h5 class="card-title text-white fw-bold mb-3">Compte Flexychèque</h5>
+             
+                  <div
+                  class="bg-white rounded shadow-sm p-3 mb-3 text-dark text-start"
+                >
+                  <p class="mb-1 small">N° compte : CH_1234-5678-9012</p>
+                  <p class="mb-1 small">Transit : 12345</p>
+                  <p class="mb-0 small">Solde: <span id="soldeChequeAffiche"></span></p>
+                </div>
+              <a href="#" class="link-custom mt-auto" data-bs-toggle="modal" data-bs-target="#modalFlexycheque">Voir les détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compte FlexyMarge -->
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-custom h-100 p-4 text-center">
+            <div class="card-body p-0 d-flex flex-column">
+              <i class="bi bi-cash-stack card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+              <h5 class="card-title text-white fw-bold mb-3">Marge de crédit</h5>
+              
+                 <div
+                  class="bg-white rounded shadow-sm p-3 mb-3 text-dark text-start"
+                >
+                  <p class="mb-1 small">N° de compte : MRG_4589-1234-7954</p>
+                  <p class="mb-1 small">Paiement dû:</p>
+                  <p class="mb-0 small">Solde de la marge: <span id="soldeMargeAffiche"></span></p>
+                </div>
+              <a href="#" class="link-custom mt-auto" data-bs-toggle="modal" data-bs-target="#modalMarge">Voir les détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compte FlexyEpargne -->
+
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card card-custom h-100 p-4 text-center">
+            <div class="card-body p-0 d-flex flex-column">
+              <i class="bi bi-piggy-bank card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
+              <h5 class="card-title text-white fw-bold mb-3">FlexÉpargne</h5>
+             
+                   <div
+                  class="bg-white rounded shadow-sm p-3 mb-3 text-dark text-start"
+                >
+                  <p class="mb-1 small">N° de compte : EP_4589-1234-5678</p>
+                  <p class="mb-1 small">Paiement dû:</p>
+                  <p class="mb-0 small">Solde du compte:</p>
+                </div>
+              <a href="#" class="link-custom mt-auto" data-bs-toggle="modal" data-bs-target="#modalEpargne">Voir les détails</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal Flexy-carte -->
+<div class="modal fade" id="modalFlexyCarte" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Flexy-carte - Transactions</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="bg-white rounded shadow-sm p-3 text-dark">
+          <div class="table-responsive">
+            <table class="table table-sm mb-0">
+              <thead>
+                <tr class="small text-muted">
+                  <th>Date</th><th>Description</th><th class="text-end">Montant</th>
+                </tr>
+              </thead>
+              <tbody class="small">
+                <tr><td>2026-07-28</td><td>IGA Marché</td><td class="text-end text-danger">-84.12 $</td></tr>
+                <tr><td>2026-07-26</td><td>Essence Ultramar</td><td class="text-end text-danger">-62.50 $</td></tr>
+                <tr><td>2026-07-24</td><td>Netflix.com</td><td class="text-end text-danger">-17.99 $</td></tr>
+                <tr><td>2026-07-20</td><td>Paiement reçu - Merci</td><td class="text-end text-success">+250.00 $</td></tr>
+                <tr><td>2026-07-18</td><td>Pharmacie Jean Coutu</td><td class="text-end text-danger">-23.47 $</td></tr>
+              </tbody>
+            </table>
+          </div>
+         <hr class="my-2">
+          <p class="mb-0 small text-end fw-bold">Solde actuel : <span id="soldeCarteModal"></span></p>
+         <button type="button" class="btn btn-primary-custom" data-bs-target-next="#modalPaiementCarte">Payer la carte</button>
+  <button type="button" class="btn btn-primary-custom" data-bs-target-next="#modalTransfertCarte">Faire un transfert de fonds</button>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal FlexyChèque -->
+<div class="modal fade" id="modalFlexycheque" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Compte Flexychèque - Transactions</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="bg-white rounded shadow-sm p-3 text-dark">
+          <div class="table-responsive">
+            <table class="table table-sm mb-0">
+              <thead>
+                <tr class="small text-muted">
+                  <th>Date</th><th>Description</th><th class="text-end">Montant</th>
+                </tr>
+              </thead>
+              <tbody class="small">
+                <tr><td>2026-07-30</td><td>Dépôt paie - Employeur XYZ</td><td class="text-end text-success">+1 250.00 $</td></tr>
+                <tr><td>2026-07-29</td><td>Virement vers FlexÉpargne</td><td class="text-end text-danger">-200.00 $</td></tr>
+                <tr><td>2026-07-27</td><td>Hydro-Québec</td><td class="text-end text-danger">-98.45 $</td></tr>
+                <tr><td>2026-07-25</td><td>Loyer - Gestion Immobilière</td><td class="text-end text-danger">-750.00 $</td></tr>
+                <tr><td>2026-07-22</td><td>Retrait guichet automatique</td><td class="text-end text-danger">-80.00 $</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <hr class="my-2">
+          <p class="mb-0 small text-end fw-bold">Solde actuel : <span id="soldeChequeModal"></span></p>
+        </div>
+
+        <div class="d-flex justify-content-center mt-4">
+          <button type="button" class="btn btn-primary-custom" data-bs-target-next="#modalTransfertFlexycheque">Faire un transfert de fonds</button>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Marge de crédit -->
+<div class="modal fade" id="modalMarge" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Marge de crédit - Transactions</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="bg-white rounded shadow-sm p-3 text-dark">
+          <div class="table-responsive">
+            <table class="table table-sm mb-0">
+              <thead>
+                <tr class="small text-muted">
+                  <th>Date</th><th>Description</th><th class="text-end">Montant</th>
+                </tr>
+              </thead>
+              <tbody class="small">
+                <tr><td>2026-07-19</td><td>Avance de fonds</td><td class="text-end text-danger">-500.00 $</td></tr>
+                <tr><td>2026-07-15</td><td>Réparation véhicule - Garage Boivin</td><td class="text-end text-danger">-620.00 $</td></tr>
+                <tr><td>2026-07-05</td><td>Paiement mensuel</td><td class="text-end text-success">+150.00 $</td></tr>
+                <tr><td>2026-06-28</td><td>Intérêts mensuels</td><td class="text-end text-danger">-12.35 $</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <hr class="my-2">
+          <p class="mb-0 small text-end fw-bold">Solde actuel : <span id="soldeMargeModal">982.35 $</span></p>
+        </div>
+
+        <div class="d-flex gap-3 justify-content-center mt-4">
+          <button type="button" class="btn btn-primary-custom" data-bs-target-next="#modalPaiementMarge">Payer la marge</button>
+          <button type="button" class="btn btn-primary-custom" data-bs-target-next="#modalTransfertMarge">Faire un transfert de fonds</button>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal FlexÉpargne -->
+
+<div class="modal fade" id="modalEpargne" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">FlexÉpargne - Transactions</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="bg-white rounded shadow-sm p-3 text-dark">
+          <div class="table-responsive">
+            <table class="table table-sm mb-0">
+              <thead>
+                <tr class="small text-muted">
+                  <th>Date</th><th>Description</th><th class="text-end">Montant</th>
+                </tr>
+              </thead>
+              <tbody class="small">
+                <tr><td>2026-07-29</td><td>Virement de Flexychèque</td><td class="text-end text-success">+200.00 $</td></tr>
+                <tr><td>2026-07-15</td><td>Intérêts versés</td><td class="text-end text-success">+4.10 $</td></tr>
+                <tr><td>2026-06-29</td><td>Virement de Flexychèque</td><td class="text-end text-success">+200.00 $</td></tr>
+                <tr><td>2026-06-15</td><td>Intérêts versés</td><td class="text-end text-success">+3.85 $</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <hr class="my-2">
+          <p class="mb-0 small text-end fw-bold">Solde actuel : 3 407.95 $</p>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary-custom" data-bs-target-next="#modalTransfertEpargne">Faire un transfert de fonds</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fenêtre détail -->
+
+<div class="modal fade" id="modalPaiementCarte" tabindex="-1" aria-labelledby="modalPaiementCarteLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold" id="modalPaiementCarteLabel">Payer la Flexy-carte</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+          <div class="modal-body">
+            <form id="formPaiementCarte">
+              <div class="mb-3">
+                <label for="compteSource" class="form-label text-white">Payer à partir de</label>
+                <select class="form-select" id="compteSource" required>
+                  <option value="" selected disabled>Choisir un compte</option>
+                  <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
+                  <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="montantPaiement" class="form-label text-white">Montant à payer ($)</label>
+                <input type="number" class="form-control" id="montantPaiement" step="0.01" min="0.01" required>
+                </div>
+            </form>
+          </div>
+
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Annuler</button>
+            <button type="submit" form="formPaiementCarte" class="btn btn-primary-custom">Confirmer le paiement</button>
+          </div>
+      </div>
+    </div>
   </div>
 
+
+<!-- modal transfert-->
+<!-- Flexy-carte-->
+
+<div class="modal fade" id="modalTransfertCarte" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Transfert de fonds - Flexy-carte</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formTransfertCarte">
+          <div class="mb-3">
+            <label for="compteDestinationCarte" class="form-label text-white">Transférer vers</label>
+            <select class="form-select" id="compteDestinationCarte" required>
+              <option value="" selected disabled>Choisir un compte</option>
+              <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
+              <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="montantTransfertCarte" class="form-label text-white">Montant à transférer ($)</label>
+            <input type="number" class="form-control" id="montantTransfertCarte" step="0.01" min="0.01" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Annuler</button>
+        <button type="submit" form="formTransfertCarte" class="btn btn-primary-custom">Transférer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalAvertissementCarte" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Avertissement</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-white mb-0">Des frais de crédit s'appliquent sur toute avance de fonds!</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" id="btnRefuserTransfertCarte">Refuser</button>
+        <button type="button" class="btn btn-primary-custom" id="btnAccepterTransfertCarte">Accepter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Flexy-Marge-->
+
+
+<div class="modal fade" id="modalTransfertFlexycheque" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Transfert de fonds - Flexychèque</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formTransfertFlexycheque">
+          <div class="mb-3">
+            <label for="compteDestination" class="form-label text-white">Transférer vers</label>
+            <select class="form-select" id="compteDestination" required>
+              <option value="" selected disabled>Choisir un compte</option>
+              <option value="MRG_4589-1234-7954">Marge de crédit - MRG_4589-1234-7954</option>
+              <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
+              <option value="4589-1234-5678-9012">Flexy-carte - 4589-1234-5678-9012</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="montantTransfert" class="form-label text-white">Montant à transférer ($)</label>
+            <input type="number" class="form-control" id="montantTransfert" step="0.01" min="0.01" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Annuler</button>
+        <button type="submit" form="formTransfertFlexycheque" class="btn btn-primary-custom">Transférer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal transfert Flexy-Épargne-->
+
+<div class="modal fade" id="modalTransfertEpargne" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Transfert de fonds - FlexÉpargne</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formTransfertEpargne">
+          <div class="mb-3">
+            <label for="compteDestinationEpargne" class="form-label text-white">Transférer vers</label>
+            <select class="form-select" id="compteDestinationEpargne" required>
+              <option value="" selected disabled>Choisir un compte</option>
+              <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
+              <option value="MRG_4589-1234-7954">Marge de crédit - MRG_4589-1234-7954</option>
+              <option value="4589-1234-5678-9012">Flexy-carte - 4589-1234-5678-9012</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="montantTransfertEpargne" class="form-label text-white">Montant à transférer ($)</label>
+            <input type="number" class="form-control" id="montantTransfertEpargne" step="0.01" min="0.01" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Annuler</button>
+        <button type="submit" form="formTransfertEpargne" class="btn btn-primary-custom">Transférer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </main>
+  </div>
   <footer class="mt-5 pt-5 pb-4" style="background-color: var(--bg-card); border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="row gy-4">
         <div class="col-12 col-lg-4">
-          <a class="navbar-brand text-white fw-bold fs-4 d-flex align-items-center mb-3" href="index.html"
+          <a class="navbar-brand text-white fw-bold fs-4 d-flex align-items-center mb-3" href="#"
             style="text-decoration: none;">
             <i class="bi bi-bank text-primary me-2"></i> FlexyBanque
           </a>
@@ -61,54 +516,229 @@
           </p>
         </div>
 
-        <div class="col-6 col-lg-2 offset-lg-2">
-          <h6 class="text-white fw-bold mb-3">Produits</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Flexy-carte</a></li>
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Flexychèque</a></li>
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Marge de crédit</a></li>
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Épargne</a></li>
-          </ul>
-        </div>
+        <!-- Modal paiement de la marge-->
 
-        <div class="col-6 col-lg-2">
-          <h6 class="text-white fw-bold mb-3">À propos</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Notre histoire</a></li>
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Carrières</a></li>
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Presse</a></li>
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Nous joindre</a></li>
-          </ul>
-        </div>
-
-        <div class="col-12 col-lg-2">
-          <h6 class="text-white fw-bold mb-3">Légal</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Confidentialité</a></li>
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Conditions</a></li>
-            <li class="mb-2"><a href="#" class="text-muted-custom text-decoration-none">Sécurité</a></li>
-          </ul>
-        </div>
+        <div class="modal fade" id="modalPaiementMarge" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Payer la marge de crédit</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-
-      <hr style="border-color: var(--border-color); margin-top: 3rem; margin-bottom: 1.5rem;">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-        <p class="text-muted-custom mb-3 mb-md-0 small">
-          &copy; 2026 FlexyBanque. Tous droits réservés.
-        </p>
-        <div class="d-flex gap-3">
-          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-muted-custom text-decoration-none fs-5"><i class="bi bi-linkedin"></i></a>
-        </div>
+      <div class="modal-body">
+        <form id="formPaiementMarge">
+          <div class="mb-3">
+            <label for="compteSourceMarge" class="form-label text-white">Payer à partir de</label>
+            <select class="form-select" id="compteSourceMarge" required>
+              <option value="" selected disabled>Choisir un compte</option>
+              <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
+              <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="montantPaiementMarge" class="form-label text-white">Montant à payer ($)</label>
+            <input type="number" class="form-control" id="montantPaiementMarge" step="0.01" min="0.01" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Annuler</button>
+        <button type="submit" form="formPaiementMarge" class="btn btn-primary-custom">Confirmer le paiement</button>
       </div>
     </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="tableau-de-bord.js"></script>
-</body>
+  </div>
+</div>
+
+<!--Modal transfert de la marge-->
+
+<div class="modal fade" id="modalTransfertMarge" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Transfert de fonds - Marge de crédit</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formTransfertMarge">
+          <div class="mb-3">
+            <label for="compteDestinationMarge" class="form-label text-white">Transférer vers</label>
+            <select class="form-select" id="compteDestinationMarge" required>
+              <option value="" selected disabled>Choisir un compte</option>
+              <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
+              <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
+              <option value="4589-1234-5678-9012">Flexy-carte - 4589-1234-5678-9012</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="montantTransfertMarge" class="form-label text-white">Montant à transférer ($)</label>
+            <input type="number" class="form-control" id="montantTransfertMarge" step="0.01" min="0.01" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Annuler</button>
+        <button type="submit" form="formTransfertMarge" class="btn btn-primary-custom">Transférer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal avertissement -->
+
+<div class="modal fade" id="modalAvertissementMarge" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content card-custom">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white fw-bold">Avertissement</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-white mb-0">Des frais de crédit s'appliquent sur toute avance de fonds!</p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-custom" id="btnRefuserTransfertMarge">Refuser</button>
+        <button type="button" class="btn btn-primary-custom" id="btnAccepterTransfertMarge">Accepter</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </main>
+    </div>
+
+    <footer
+      class="mt-5 pt-5 pb-4"
+      style="
+        background-color: var(--bg-card);
+        border-top: 1px solid var(--border-color);
+      "
+    >
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-12 col-lg-4">
+            <a
+              class="navbar-brand text-white fw-bold fs-4 d-flex align-items-center mb-3"
+              href="index.html"
+              style="text-decoration: none"
+            >
+              <i class="bi bi-bank text-primary me-2"></i> FlexyBanque
+            </a>
+            <p class="text-muted-custom">
+              La néo-banque conçue pour votre réussite financière. Profitez des
+              meilleurs taux et d'une expérience 100% numérique sans compromis
+              sur la sécurité.
+            </p>
+          </div>
+
+          <div class="col-6 col-lg-2 offset-lg-2">
+            <h6 class="text-white fw-bold mb-3">Produits</h6>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Flexy-carte</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Flexychèque</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Marge de crédit</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Épargne</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="text-white fw-bold mb-3">À propos</h6>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Notre histoire</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Carrières</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Presse</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Nous joindre</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-lg-2">
+            <h6 class="text-white fw-bold mb-3">Légal</h6>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Confidentialité</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Conditions</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-muted-custom text-decoration-none"
+                  >Sécurité</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr
+          style="
+            border-color: var(--border-color);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+          "
+        />
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+        >
+          <p class="text-muted-custom mb-3 mb-md-0 small">
+            &copy; 2026 FlexyBanque. Tous droits réservés.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-muted-custom text-decoration-none fs-5"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-muted-custom text-decoration-none fs-5"
+              ><i class="bi bi-twitter-x"></i
+            ></a>
+            <a href="#" class="text-muted-custom text-decoration-none fs-5"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-muted-custom text-decoration-none fs-5"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="tableau-de-bord.js"></script>
+  </body>
 </html>
