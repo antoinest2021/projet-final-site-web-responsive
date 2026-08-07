@@ -1,0 +1,10 @@
+
+Voici les information de connexion pour trois utilisateur fictifs dans le but de tester la 
+page connexion.
+
+
+jean.tremblay@courriel.com  password123
+
+marie.gagnon@courriel.com  motdepasse1
+
+"marc.boucher@courriel.com securite2026
