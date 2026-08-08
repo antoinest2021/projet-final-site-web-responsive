@@ -16,9 +16,7 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* =========================================
-   Classes CSS Réutilisables (Design System)
-   ========================================= */
+/*Classes CSS Réutilisables (Design System)*/
 
 /* Conteneurs et Cartes */
 .card-custom {
@@ -106,7 +104,7 @@ body {
 
 .card-icon {
   color: var(--primary-blue);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -114,4 +112,41 @@ body {
 .navbar {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   border-bottom-color: transparent !important;
+}
+
+.navbar-custom {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.footer-custom {
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+}
+
+.hr-custom {
+  border-color: var(--border-color);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-image-custom {
+  border: 1px solid var(--border-color);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  max-width: 400px;
+  width: 100%;
+}
+
+.text-primary-custom {
+  color: var(--primary-blue) !important;
+}
+
+.profile-icon {
+  font-size: 3rem;
+  color: var(--primary-blue);
+}
+
+.error-msg-text {
+  font-size: 0.9em;
 }

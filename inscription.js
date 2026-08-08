@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
 
         if (label.find('.error-msg').length === 0) {
-            label.append('<span class="error-msg text-danger ms-2 fw-bold" style="font-size: 0.9em;">' + message + '</span>');
+            label.append('<span class="error-msg text-danger ms-2 fw-bold error-msg-text">' + message + '</span>');
         }
     }
 
@@ -110,7 +110,7 @@ $(document).ready(function () {
             if (!$('input[name="typeClient"]:checked').length) {
                 const radioLabel = $('label:contains("Quel type de client")');
                 if (radioLabel.find('.error-msg').length === 0) {
-                    radioLabel.append('<span class="error-msg text-danger ms-2 fw-bold" style="font-size: 0.9em;">- Veuillez choisir un profil.</span>');
+                    radioLabel.append('<span class="error-msg text-danger ms-2 fw-bold error-msg-text">- Veuillez choisir un profil.</span>');
                 }
                 hasError = true;
             }
