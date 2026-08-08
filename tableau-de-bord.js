@@ -1,206 +1,178 @@
-$(document).ready(function() {
-    console.log("Tableau de bord script chargé");
+$(document).ready(function () {
+  console.log("Tableau de bord script chargé");
 
-    // Protection de la page + lecture des données de l'utilisateur connecté
-    const utilisateurJSON = sessionStorage.getItem("utilisateurConnecte");
-    if (!utilisateurJSON) {
-        window.location.href = "connexion.html";
-        return;
-    }
-    const utilisateur = JSON.parse(utilisateurJSON);
+  // Protection de la page + lecture des données de l'utilisateur connecté
+  const utilisateurJSON = sessionStorage.getItem("utilisateurConnecte");
+  if (!utilisateurJSON) {
+    window.location.href = "connexion.html";
+    return;
+  }
+  const utilisateur = JSON.parse(utilisateurJSON);
 
-    // Affichage des infos du profil
-    document.getElementById('profilNom').textContent = utilisateur.nom;
-    document.getElementById('profilCourriel').textContent = utilisateur.courriel;
-    document.getElementById('profilNumeroClient').textContent = utilisateur.numeroClient;
-    document.getElementById('profilMembreDepuis').textContent = utilisateur.membreDepuis;
-    document.getElementById('profilAdresse').textContent = utilisateur.adresse;
-    document.getElementById('profilTelephone').textContent = utilisateur.telephone;
-    document.getElementById('profilStatut').textContent = utilisateur.statut;
+  //-- Fonction de confirmation (remplace alert()) --//
 
-//-- script affichage compte--//
+  function afficherConfirmation(message) {
+    $("#messageConfirmation").text(message);
+    new bootstrap.Modal($("#modalConfirmation").get(0)).show();
+  }
 
+  // Affichage des infos du profil
 
-//-- script Flexycarte--//
+  $("#profilNom").text(utilisateur.nom);
+  $("#profilCourriel").text(utilisateur.courriel);
+  $("#profilNumeroClient").text(utilisateur.numeroClient);
+  $("#profilMembreDepuis").text(utilisateur.membreDepuis);
+  $("#profilAdresse").text(utilisateur.adresse);
+  $("#profilTelephone").text(utilisateur.telephone);
+  $("#profilStatut").text(utilisateur.statut);
 
-const soldeFlexyCarte = 607.13;
+  //--- Affiche données utilisateur connecté (soldes) ---//
 
-document.getElementById('soldeCarteAffiche').textContent = soldeFlexyCarte.toFixed(2) + ' $';
-document.getElementById('soldeCarteModal').textContent = soldeFlexyCarte.toFixed(2) + ' $';
-document.getElementById('montantPaiement').value = soldeFlexyCarte.toFixed(2);
-document.getElementById('montantPaiement').placeholder = soldeFlexyCarte.toFixed(2)
-//-- script FlexyCheque--//
+  $("#soldeCarteAffiche").text(utilisateur.soldes.carte.toFixed(2) + " $");
+  $("#soldeCarteModal").text(utilisateur.soldes.carte.toFixed(2) + " $");
+  $("#montantPaiement").val(utilisateur.soldes.carte.toFixed(2));
+  $("#montantPaiement").attr("placeholder", utilisateur.soldes.carte.toFixed(2));
 
-const soldeFlexycheque = 1843.20;
+  $("#soldeChequeAffiche").text(utilisateur.soldes.cheque.toFixed(2) + " $");
+  $("#soldeChequeModal").text(utilisateur.soldes.cheque.toFixed(2) + " $");
 
-document.getElementById('soldeChequeAffiche').textContent = soldeFlexycheque.toFixed(2) + ' $';
-document.getElementById('soldeChequeModal').textContent = soldeFlexycheque.toFixed(2) + ' $';
+  $("#soldeMargeAffiche").text(utilisateur.soldes.marge.toFixed(2) + " $");
+  $("#soldeMargeModal").text(utilisateur.soldes.marge.toFixed(2) + " $");
+  $("#montantPaiementMarge").val(utilisateur.soldes.marge.toFixed(2));
+  $("#montantPaiementMarge").attr("placeholder", utilisateur.soldes.marge.toFixed(2));
 
-//-- Script solde épargne --//
+  $("#soldeEpargneAffiche").text(utilisateur.soldes.epargne.toFixed(2) + " $");
+  $("#soldeEpargneModal").text(utilisateur.soldes.epargne.toFixed(2) + " $");
 
-const soldeEpargne = 3407.95;
+  //-- script popup "faire un transfert / payer" (chaînage de modales) --//
 
-document.getElementById('soldeEpargneAffiche').textContent = soldeEpargne.toFixed(2) + ' $';
-document.getElementById('soldeEpargneModal').textContent = soldeEpargne.toFixed(2) + ' $';
+  $("[data-bs-target-next]").on("click", function () {
+    const $currentModalEl = $(this).closest(".modal");
+    const nextModalId = $(this).attr("data-bs-target-next");
+    const currentModal = bootstrap.Modal.getInstance($currentModalEl.get(0));
 
-//-- script popup flexyque --//
-
-document.querySelectorAll('[data-bs-target-next]').forEach(btn => {
-  btn.addEventListener('click', function () {
-    const currentModalEl = this.closest('.modal');
-    const nextModalId = this.getAttribute('data-bs-target-next');
-    const currentModal = bootstrap.Modal.getInstance(currentModalEl);
-
-    currentModalEl.addEventListener('hidden.bs.modal', function handler() {
-      new bootstrap.Modal(document.querySelector(nextModalId)).show();
-      currentModalEl.removeEventListener('hidden.bs.modal', handler);
+    $currentModalEl.one("hidden.bs.modal", function () {
+      new bootstrap.Modal($(nextModalId).get(0)).show();
     });
 
     currentModal.hide();
   });
-});
 
- //-- Script solde marge --//
+  //-- avertissement transfert de fonds --//
 
- const soldeMarge = 982.35;
+  //-- Flexy-Marge --//
 
-document.getElementById('soldeMargeAffiche').textContent = soldeMarge.toFixed(2) + ' $';
-document.getElementById('soldeMargeModal').textContent = soldeMarge.toFixed(2) + ' $';
-document.getElementById('montantPaiementMarge').value = soldeMarge.toFixed(2);
-document.getElementById('montantPaiementMarge').placeholder = soldeMarge.toFixed(2);
+  $("#formTransfertMarge").on("submit", function (e) {
+    e.preventDefault();
 
-//-- avertissement transfert de fonds --//
+    const $transfertModalEl = $("#modalTransfertMarge");
+    const transfertModal = bootstrap.Modal.getInstance($transfertModalEl.get(0));
 
+    $transfertModalEl.one("hidden.bs.modal", function () {
+      new bootstrap.Modal($("#modalAvertissementMarge").get(0)).show();
+    });
 
-//-- Fexy-Marge--//
-document.getElementById('formTransfertMarge').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const transfertModalEl = document.getElementById('modalTransfertMarge');
-  const transfertModal = bootstrap.Modal.getInstance(transfertModalEl);
-
-  transfertModalEl.addEventListener('hidden.bs.modal', function handler() {
-    new bootstrap.Modal(document.getElementById('modalAvertissementMarge')).show();
-    transfertModalEl.removeEventListener('hidden.bs.modal', handler);
+    transfertModal.hide();
   });
 
-  transfertModal.hide();
-});
+  $("#btnAccepterTransfertMarge").on("click", function () {
+    const $avertissementEl = $("#modalAvertissementMarge");
+    bootstrap.Modal.getInstance($avertissementEl.get(0)).hide();
 
-document.getElementById('btnAccepterTransfertMarge').addEventListener('click', function () {
-  bootstrap.Modal.getInstance(document.getElementById('modalAvertissementMarge')).hide();
-  alert('Transfert effectué avec succès.');
-});
-
-document.getElementById('btnRefuserTransfertMarge').addEventListener('click', function () {
-  bootstrap.Modal.getInstance(document.getElementById('modalAvertissementMarge')).hide();
-});
-
-//-- Flexy-Carte--//
-
-document.getElementById('formTransfertCarte').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const transfertModalEl = document.getElementById('modalTransfertCarte');
-  const transfertModal = bootstrap.Modal.getInstance(transfertModalEl);
-
-  transfertModalEl.addEventListener('hidden.bs.modal', function handler() {
-    new bootstrap.Modal(document.getElementById('modalAvertissementCarte')).show();
-    transfertModalEl.removeEventListener('hidden.bs.modal', handler);
+    $avertissementEl.one("hidden.bs.modal", function () {
+      afficherConfirmation("Transfert effectué avec succès.");
+    });
   });
 
-  transfertModal.hide();
-});
-
-document.getElementById('btnAccepterTransfertCarte').addEventListener('click', function () {
-  bootstrap.Modal.getInstance(document.getElementById('modalAvertissementCarte')).hide();
-  alert('Transfert effectué avec succès.');
-});
-
-document.getElementById('btnRefuserTransfertCarte').addEventListener('click', function () {
-  bootstrap.Modal.getInstance(document.getElementById('modalAvertissementCarte')).hide();
-});
-
-//-- Paiement Flexy-carte --//
-
-document.getElementById('formPaiementCarte').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const paiementModalEl = document.getElementById('modalPaiementCarte');
-  const paiementModal = bootstrap.Modal.getInstance(paiementModalEl);
-
-  paiementModalEl.addEventListener('hidden.bs.modal', function handler() {
-    alert('Paiement effectué avec succès.');
-    paiementModalEl.removeEventListener('hidden.bs.modal', handler);
+  $("#btnRefuserTransfertMarge").on("click", function () {
+    bootstrap.Modal.getInstance($("#modalAvertissementMarge").get(0)).hide();
   });
 
-  paiementModal.hide();
-});
+  //-- Flexy-Carte --//
 
-//-- Paiement Marge de crédit --//
+  $("#formTransfertCarte").on("submit", function (e) {
+    e.preventDefault();
 
-document.getElementById('formPaiementMarge').addEventListener('submit', function (e) {
-  e.preventDefault();
+    const $transfertModalEl = $("#modalTransfertCarte");
+    const transfertModal = bootstrap.Modal.getInstance($transfertModalEl.get(0));
 
-  const paiementModalEl = document.getElementById('modalPaiementMarge');
-  const paiementModal = bootstrap.Modal.getInstance(paiementModalEl);
+    $transfertModalEl.one("hidden.bs.modal", function () {
+      new bootstrap.Modal($("#modalAvertissementCarte").get(0)).show();
+    });
 
-  paiementModalEl.addEventListener('hidden.bs.modal', function handler() {
-    alert('Paiement effectué avec succès.');
-    paiementModalEl.removeEventListener('hidden.bs.modal', handler);
+    transfertModal.hide();
   });
 
-  paiementModal.hide();
-});
+  $("#btnAccepterTransfertCarte").on("click", function () {
+    const $avertissementEl = $("#modalAvertissementCarte");
+    bootstrap.Modal.getInstance($avertissementEl.get(0)).hide();
 
-//-- Transfert Flexychèque --//
-
-document.getElementById('formTransfertFlexycheque').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const transfertModalEl = document.getElementById('modalTransfertFlexycheque');
-  const transfertModal = bootstrap.Modal.getInstance(transfertModalEl);
-
-  transfertModalEl.addEventListener('hidden.bs.modal', function handler() {
-    alert('Transfert effectué avec succès.');
-    transfertModalEl.removeEventListener('hidden.bs.modal', handler);
+    $avertissementEl.one("hidden.bs.modal", function () {
+      afficherConfirmation("Transfert effectué avec succès.");
+    });
   });
 
-  transfertModal.hide();
-});
-
-//-- Transfert FlexÉpargne --//
-
-document.getElementById('formTransfertEpargne').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const transfertModalEl = document.getElementById('modalTransfertEpargne');
-  const transfertModal = bootstrap.Modal.getInstance(transfertModalEl);
-
-  transfertModalEl.addEventListener('hidden.bs.modal', function handler() {
-    alert('Transfert effectué avec succès.');
-    transfertModalEl.removeEventListener('hidden.bs.modal', handler);
+  $("#btnRefuserTransfertCarte").on("click", function () {
+    bootstrap.Modal.getInstance($("#modalAvertissementCarte").get(0)).hide();
   });
 
-  transfertModal.hide();
-});
+  //-- Paiement Flexy-carte --//
 
-    //--- Affiche données utilisateur connecté---//
+  $("#formPaiementCarte").on("submit", function (e) {
+    e.preventDefault();
 
-    document.getElementById('soldeCarteAffiche').textContent = utilisateur.soldes.carte.toFixed(2) + ' $';
-    document.getElementById('soldeCarteModal').textContent = utilisateur.soldes.carte.toFixed(2) + ' $';
-    document.getElementById('montantPaiement').value = utilisateur.soldes.carte.toFixed(2);
-    document.getElementById('montantPaiement').placeholder = utilisateur.soldes.carte.toFixed(2);
+    const $paiementModalEl = $("#modalPaiementCarte");
+    const paiementModal = bootstrap.Modal.getInstance($paiementModalEl.get(0));
 
-    document.getElementById('soldeChequeAffiche').textContent = utilisateur.soldes.cheque.toFixed(2) + ' $';
-    document.getElementById('soldeChequeModal').textContent = utilisateur.soldes.cheque.toFixed(2) + ' $';
+    $paiementModalEl.one("hidden.bs.modal", function () {
+      afficherConfirmation("Paiement effectué avec succès.");
+    });
 
-    document.getElementById('soldeMargeAffiche').textContent = utilisateur.soldes.marge.toFixed(2) + ' $';
-    document.getElementById('soldeMargeModal').textContent = utilisateur.soldes.marge.toFixed(2) + ' $';
-    document.getElementById('montantPaiementMarge').value = utilisateur.soldes.marge.toFixed(2);
-    document.getElementById('montantPaiementMarge').placeholder = utilisateur.soldes.marge.toFixed(2);
+    paiementModal.hide();
+  });
 
-    document.getElementById('soldeEpargneAffiche').textContent = utilisateur.soldes.epargne.toFixed(2) + ' $';
-    document.getElementById('soldeEpargneModal').textContent = utilisateur.soldes.epargne.toFixed(2) + ' $';
+  //-- Paiement Marge de crédit --//
 
+  $("#formPaiementMarge").on("submit", function (e) {
+    e.preventDefault();
+
+    const $paiementModalEl = $("#modalPaiementMarge");
+    const paiementModal = bootstrap.Modal.getInstance($paiementModalEl.get(0));
+
+    $paiementModalEl.one("hidden.bs.modal", function () {
+      afficherConfirmation("Paiement effectué avec succès.");
+    });
+
+    paiementModal.hide();
+  });
+
+  //-- Transfert Flexychèque --//
+
+  $("#formTransfertFlexycheque").on("submit", function (e) {
+    e.preventDefault();
+
+    const $transfertModalEl = $("#modalTransfertFlexycheque");
+    const transfertModal = bootstrap.Modal.getInstance($transfertModalEl.get(0));
+
+    $transfertModalEl.one("hidden.bs.modal", function () {
+      afficherConfirmation("Transfert effectué avec succès.");
+    });
+
+    transfertModal.hide();
+  });
+
+  //-- Transfert FlexÉpargne --//
+
+  $("#formTransfertEpargne").on("submit", function (e) {
+    e.preventDefault();
+
+    const $transfertModalEl = $("#modalTransfertEpargne");
+    const transfertModal = bootstrap.Modal.getInstance($transfertModalEl.get(0));
+
+    $transfertModalEl.one("hidden.bs.modal", function () {
+      afficherConfirmation("Transfert effectué avec succès.");
+    });
+
+    transfertModal.hide();
+  });
 });

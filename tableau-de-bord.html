@@ -91,7 +91,7 @@
                 <h5 class="text-white fw-bold mb-1" id="profilNom"></h5>
                 <p class="text-muted-custom mb-3 small" id="profilCourriel"></p>
 
-                <div class="bg-white rounded shadow-sm p-3 text-dark text-start w-100">
+                <div class="bg-secondary-subtle rounded shadow-sm p-3 text-dark text-start w-100">
                   <p class="mb-1 small"><strong>N° client :</strong> <span id="profilNumeroClient"></span></p>
                   <p class="mb-1 small"><strong>Membre depuis :</strong> <span id="profilMembreDepuis"></span></p>
                   <p class="mb-1 small"><strong>adresse:</strong> <span id="profilAdresse"></span></p>
@@ -111,7 +111,7 @@
                 <i class="bi bi-credit-card card-icon d-block mb-3" style="font-size: 2.5rem;"></i>
                 <h5 class="card-title text-white fw-bold mb-3">Flexy-carte</h5>
 
-                <div class="bg-white rounded shadow-sm p-3 mb-3 text-dark text-start">
+                <div class="bg-secondary-subtle rounded shadow-sm p-3 mb-3 text-dark text-start">
                   <p class="mb-1 small">N° carte : 4589-1234-5678-9012</p>
                   <p class="mb-1 small">Paiement dû:</p>
                   <p class="mb-0 small">Solde de la carte: <span id="soldeCarteAffiche"></span></p>
@@ -130,7 +130,7 @@
                 <h5 class="card-title text-white fw-bold mb-3">Compte Flexychèque</h5>
 
                 <div
-                  class="bg-white rounded shadow-sm p-3 mb-3 text-dark text-start"
+                  class="bg-secondary-subtle rounded shadow-sm p-3 mb-3 text-dark text-start"
                 >
                   <p class="mb-1 small">N° compte : CH_1234-5678-9012</p>
                   <p class="mb-1 small">Transit : 12345</p>
@@ -150,7 +150,7 @@
                 <h5 class="card-title text-white fw-bold mb-3">Marge de crédit</h5>
 
                 <div
-                  class="bg-white rounded shadow-sm p-3 mb-3 text-dark text-start"
+                  class="bg-secondary-subtle rounded shadow-sm p-3 mb-3 text-dark text-start"
                 >
                   <p class="mb-1 small">N° de compte : MRG_4589-1234-7954</p>
                   <p class="mb-1 small">Paiement dû:</p>
@@ -170,7 +170,7 @@
                 <h5 class="card-title text-white fw-bold mb-3">FlexÉpargne</h5>
 
                 <div
-                  class="bg-white rounded shadow-sm p-3 mb-3 text-dark text-start"
+                  class="bg-secondary-subtle rounded shadow-sm p-3 mb-3 text-dark text-start"
                 >
                   <p class="mb-1 small">N° de compte : EP_4589-1234-5678</p>
                   <p class="mb-1 small">Paiement dû:</p>
@@ -183,7 +183,7 @@
         </div>
 
         <!-- Modal Flexy-carte -->
-        <div class="modal fade" id="modalFlexyCarte" tabindex="-1" aria-hidden="true">
+       <div class="modal fade" id="modalFlexyCarte" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content card-custom">
               <div class="modal-header border-0">
@@ -191,9 +191,9 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
-                <div class="bg-white rounded shadow-sm p-3 text-dark">
+                <div class="bg-secondary-subtle rounded shadow-sm p-3 text-dark">
                   <div class="table-responsive">
-                    <table class="table table-sm mb-0">
+                    <table class="table table-sm table-secondary mb-0">
                       <thead>
                         <tr class="small text-muted">
                           <th>Date</th><th>Description</th><th class="text-end">Montant</th>
@@ -230,9 +230,9 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
-                <div class="bg-white rounded shadow-sm p-3 text-dark">
+                <div class="bg-secondary-subtle rounded shadow-sm p-3 text-dark">
                   <div class="table-responsive">
-                    <table class="table table-sm mb-0">
+                    <table class="table table-sm table-secondary mb-0">
                       <thead>
                         <tr class="small text-muted">
                           <th>Date</th><th>Description</th><th class="text-end">Montant</th>
@@ -271,9 +271,9 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
-                <div class="bg-white rounded shadow-sm p-3 text-dark">
+                <div class="bg-secondary-subtle rounded shadow-sm p-3 text-dark">
                   <div class="table-responsive">
-                    <table class="table table-sm mb-0">
+                    <table class="table table-sm table-secondary mb-0">
                       <thead>
                         <tr class="small text-muted">
                           <th>Date</th><th>Description</th><th class="text-end">Montant</th>
@@ -313,9 +313,9 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
-                <div class="bg-white rounded shadow-sm p-3 text-dark">
+                <div class="bg-secondary-subtle rounded shadow-sm p-3 text-dark">
                   <div class="table-responsive">
-                    <table class="table table-sm mb-0">
+                    <table class="table table-sm table-secondary mb-0">
                       <thead>
                         <tr class="small text-muted">
                           <th>Date</th><th>Description</th><th class="text-end">Montant</th>
@@ -353,7 +353,7 @@
                     <form id="formPaiementCarte">
                       <div class="mb-3">
                         <label for="compteSource" class="form-label text-white">Payer à partir de</label>
-                        <select class="form-select" id="compteSource" required>
+                        <select class="form-select bg-secondary-subtle" id="compteSource" required>
                           <option value="" selected disabled>Choisir un compte</option>
                           <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
                           <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
@@ -362,7 +362,7 @@
 
                       <div class="mb-3">
                         <label for="montantPaiement" class="form-label text-white">Montant à payer ($)</label>
-                        <input type="number" class="form-control" id="montantPaiement" step="0.01" min="0.01" required>
+                        <input type="number" class="form-control bg-secondary-subtle" id="montantPaiement" step="0.01" min="0.01" required>
                         </div>
                     </form>
                   </div>
@@ -389,7 +389,7 @@
                 <form id="formTransfertCarte">
                   <div class="mb-3">
                     <label for="compteDestinationCarte" class="form-label text-white">Transférer vers</label>
-                    <select class="form-select" id="compteDestinationCarte" required>
+                    <select class="form-select bg-secondary-subtle" id="compteDestinationCarte" required>
                       <option value="" selected disabled>Choisir un compte</option>
                       <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
                       <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
@@ -397,7 +397,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="montantTransfertCarte" class="form-label text-white">Montant à transférer ($)</label>
-                    <input type="number" class="form-control" id="montantTransfertCarte" step="0.01" min="0.01" required>
+                    <input type="number" class="form-control bg-secondary-subtle" id="montantTransfertCarte" step="0.01" min="0.01" required>
                   </div>
                 </form>
               </div>
@@ -440,7 +440,7 @@
                 <form id="formTransfertFlexycheque">
                   <div class="mb-3">
                     <label for="compteDestination" class="form-label text-white">Transférer vers</label>
-                    <select class="form-select" id="compteDestination" required>
+                    <select class="form-select bg-secondary-subtle" id="compteDestination" required>
                       <option value="" selected disabled>Choisir un compte</option>
                       <option value="MRG_4589-1234-7954">Marge de crédit - MRG_4589-1234-7954</option>
                       <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
@@ -449,7 +449,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="montantTransfert" class="form-label text-white">Montant à transférer ($)</label>
-                    <input type="number" class="form-control" id="montantTransfert" step="0.01" min="0.01" required>
+                    <input type="number" class="form-control bg-secondary-subtle" id="montantTransfert" step="0.01" min="0.01" required>
                   </div>
                 </form>
               </div>
@@ -474,7 +474,7 @@
                 <form id="formTransfertEpargne">
                   <div class="mb-3">
                     <label for="compteDestinationEpargne" class="form-label text-white">Transférer vers</label>
-                    <select class="form-select" id="compteDestinationEpargne" required>
+                    <select class="form-select bg-secondary-subtle" id="compteDestinationEpargne" required>
                       <option value="" selected disabled>Choisir un compte</option>
                       <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
                       <option value="MRG_4589-1234-7954">Marge de crédit - MRG_4589-1234-7954</option>
@@ -483,7 +483,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="montantTransfertEpargne" class="form-label text-white">Montant à transférer ($)</label>
-                    <input type="number" class="form-control" id="montantTransfertEpargne" step="0.01" min="0.01" required>
+                    <input type="number" class="form-control bg-secondary-subtle" id="montantTransfertEpargne" step="0.01" min="0.01" required>
                   </div>
                 </form>
               </div>
@@ -508,7 +508,7 @@
                 <form id="formPaiementMarge">
                   <div class="mb-3">
                     <label for="compteSourceMarge" class="form-label text-white">Payer à partir de</label>
-                    <select class="form-select" id="compteSourceMarge" required>
+                    <select class="form-select bg-secondary-subtle" id="compteSourceMarge" required>
                       <option value="" selected disabled>Choisir un compte</option>
                       <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
                       <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
@@ -516,7 +516,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="montantPaiementMarge" class="form-label text-white">Montant à payer ($)</label>
-                    <input type="number" class="form-control" id="montantPaiementMarge" step="0.01" min="0.01" required>
+                    <input type="number" class="form-control bg-secondary-subtle" id="montantPaiementMarge" step="0.01" min="0.01" required>
                   </div>
                 </form>
               </div>
@@ -541,7 +541,7 @@
                 <form id="formTransfertMarge">
                   <div class="mb-3">
                     <label for="compteDestinationMarge" class="form-label text-white">Transférer vers</label>
-                    <select class="form-select" id="compteDestinationMarge" required>
+                    <select class="form-select bg-secondary-subtle" id="compteDestinationMarge" required>
                       <option value="" selected disabled>Choisir un compte</option>
                       <option value="CH_1234-5678-9012">Compte Flexychèque - CH_1234-5678-9012</option>
                       <option value="EP_4589-1234-5678">FlexÉpargne - EP_4589-1234-5678</option>
@@ -550,7 +550,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="montantTransfertMarge" class="form-label text-white">Montant à transférer ($)</label>
-                    <input type="number" class="form-control" id="montantTransfertMarge" step="0.01" min="0.01" required>
+                    <input type="number" class="form-control bg-secondary-subtle" id="montantTransfertMarge" step="0.01" min="0.01" required>
                   </div>
                 </form>
               </div>
@@ -581,6 +581,26 @@
             </div>
           </div>
         </div>
+
+        <!-- Modal Confirmation -->
+        <div class="modal fade" id="modalConfirmation" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content card-custom">
+              <div class="modal-header border-0">
+                <h5 class="modal-title text-white fw-bold">Confirmation</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <p class="text-white mb-0" id="messageConfirmation"></p>
+              </div>
+              <div class="modal-footer border-0">
+                <button type="button" class="btn btn-primary-custom" data-bs-dismiss="modal">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </main>
     </div>
 
