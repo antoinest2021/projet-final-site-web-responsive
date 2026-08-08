@@ -42,7 +42,191 @@
   <div class="container-fluid px-4 px-lg-5 py-5">
     <main class="card-custom p-4 p-md-5">
       <h2 class="fw-bold text-white text-center mb-5 mt-3">Demande de crédit</h2>
-      <!-- Formulaire de demande de crédit à venir -->
+
+      <!-- Formulaire de demande de crédit -->
+
+
+<!-- Rappel du client connecté -->
+<div class="p-3 p-md-4 rounded mb-5"
+  style="background-color: var(--bg-card); border: 1px solid var(--border-color);">
+  <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-person-check-fill fs-2" style="color: var(--primary-blue);"></i>
+      <div>
+        <div class="text-muted-custom small">Demande au nom de</div>
+        <div class="text-white fw-bold" id="nomClient">Chargement…</div>
+        <div class="text-muted-custom small" id="contactClient"></div>
+        <div class="text-muted-custom small" id="dossierClient"></div>
+      </div>
+    </div>
+    <a href="tableau-de-bord.html" class="btn btn-sm btn-outline-custom flex-shrink-0">
+      <i class="bi bi-pencil me-1"></i>Modifier mon profil
+    </a>
+  </div>
+</div>
+
+<form id="formCredit" novalidate>
+
+  <div class="alert alert-success d-none align-items-center gap-2" id="messageSucces" role="alert">
+    <i class="bi bi-check-circle-fill fs-4"></i>
+    <div><strong>Demande envoyée.</strong> <span id="numeroDemande"></span></div>
+  </div>
+
+  <div class="alert alert-danger d-none align-items-center gap-2" id="messageErreur" role="alert">
+    <i class="bi bi-exclamation-triangle-fill fs-4"></i>
+    <div id="texteErreur"></div>
+  </div>
+
+  <!-- ===== Adresse ============ -->
+  <h5 class="text-white fw-bold mb-1">Confirmez votre adresse</h5>
+  <p class="text-muted-custom small mb-4">Corrigez si vous avez déménagé.</p>
+
+  <div class="row g-3 mb-5">
+    <div class="col-md-8">
+      <label for="adresse" class="form-label text-muted-custom">Adresse</label>
+      <input type="text" class="form-control bg-secondary-subtle text-dark" id="adresse" name="adresse" required>
+      <div class="invalid-feedback">Entrez une adresse d'au moins 5 caractères.</div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="codePostal" class="form-label text-muted-custom">Code postal</label>
+      <input type="text" class="form-control bg-secondary-subtle text-dark text-uppercase" id="codePostal"
+        name="codePostal" placeholder="G5R 1A1" maxlength="7" required>
+      <div class="invalid-feedback">Format attendu : A1A 1A1.</div>
+    </div>
+  </div>
+
+  <!-- ===== Situation financière ============ -->
+  <h5 class="text-white fw-bold mb-1">Votre situation financière</h5>
+  <p class="text-muted-custom small mb-4">
+    Ces renseignements ne figurent pas à votre dossier.
+  </p>
+
+  <div class="row g-3 mb-5">
+    <div class="col-md-6">
+      <label for="emploi" class="form-label text-muted-custom">Situation d'emploi</label>
+      <select class="form-select bg-secondary-subtle text-dark" id="emploi" name="emploi" required>
+        <option value="" selected disabled>Choisir…</option>
+        <option value="temps-plein">Salarié à temps plein</option>
+        <option value="temps-partiel">Salarié à temps partiel</option>
+        <option value="autonome">Travailleur autonome</option>
+        <option value="etudiant">Étudiant</option>
+        <option value="retraite">Retraité</option>
+        <option value="sans-emploi">Sans emploi</option>
+      </select>
+      <div class="invalid-feedback">Choisissez votre situation d'emploi.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="employeur" class="form-label text-muted-custom">
+        Employeur <span class="small">(facultatif)</span>
+      </label>
+      <input type="text" class="form-control bg-secondary-subtle text-dark" id="employeur" name="employeur"
+        placeholder="Nom de l'entreprise">
+    </div>
+
+    <div class="col-md-6">
+      <label for="revenuAnnuel" class="form-label text-muted-custom">Revenu annuel brut</label>
+      <div class="input-group">
+        <span class="input-group-text bg-secondary-subtle">$</span>
+        <input type="number" class="form-control bg-secondary-subtle text-dark" id="revenuAnnuel"
+          name="revenuAnnuel" placeholder="45000" min="0" step="500" required>
+        <div class="invalid-feedback">Un revenu annuel de 12 000 $ minimum est requis.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Le crédit demandé ============ -->
+  <h5 class="text-white fw-bold mb-4">Le crédit demandé</h5>
+
+  <div class="row g-3 mb-5">
+    <div class="col-md-6">
+      <label for="typeCredit" class="form-label text-muted-custom">Type de crédit</label>
+      <select class="form-select bg-secondary-subtle text-dark" id="typeCredit" name="typeCredit" required>
+        <option value="" selected disabled>Choisir…</option>
+        <option value="personnel">Prêt personnel</option>
+        <option value="auto">Prêt auto</option>
+        <option value="renovation">Prêt rénovation</option>
+        <option value="marge">Marge de crédit</option>
+        <option value="etudiant">Prêt étudiant</option>
+      </select>
+      <div class="invalid-feedback">Choisissez un type de crédit.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="duree" class="form-label text-muted-custom">Durée de remboursement</label>
+      <select class="form-select bg-secondary-subtle text-dark" id="duree" name="duree" required>
+        <option value="" selected disabled>Choisir…</option>
+        <option value="12">12 mois</option>
+        <option value="24">24 mois</option>
+        <option value="36">36 mois</option>
+        <option value="48">48 mois</option>
+        <option value="60">60 mois</option>
+        <option value="72">72 mois</option>
+        <option value="84">84 mois</option>
+      </select>
+      <div class="invalid-feedback">Choisissez une durée.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="montant" class="form-label text-muted-custom">Montant demandé</label>
+      <div class="input-group">
+        <span class="input-group-text bg-secondary-subtle">$</span>
+        <input type="number" class="form-control bg-secondary-subtle text-dark" id="montant" name="montant"
+          placeholder="10000" min="1000" max="100000" step="100" required>
+        <div class="invalid-feedback">Entrez un montant entre 1 000 $ et 100 000 $.</div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="compteDebit" class="form-label text-muted-custom">Compte de prélèvement</label>
+      <select class="form-select bg-secondary-subtle text-dark" id="compteDebit" name="compteDebit" required>
+        <option value="" selected disabled>Choisir…</option>
+        <option value="cheque">Compte chèque</option>
+        <option value="epargne">Compte épargne</option>
+      </select>
+      <div class="invalid-feedback">Choisissez le compte à débiter chaque mois.</div>
+    </div>
+
+    <div class="col-12">
+      <label for="but" class="form-label text-muted-custom">
+        But du prêt <span class="small">(facultatif, 300 caractères)</span>
+      </label>
+      <textarea class="form-control bg-secondary-subtle text-dark" id="but" name="but" rows="3"
+        maxlength="300" placeholder="Consolidation de dettes, achat d'un véhicule d'occasion…"></textarea>
+      <small class="text-muted-custom"><span id="compteurBut">0</span> / 300</small>
+    </div>
+  </div>
+
+  <!-- ===== Consentement ============ -->
+  <h5 class="text-white fw-bold mb-4">Consentement</h5>
+
+  <div class="mb-3 form-check">
+    <input class="form-check-input" type="checkbox" id="consentement" name="consentement" required>
+    <label class="form-check-label text-muted-custom" for="consentement">
+      J'autorise FlexyBanque à consulter mon dossier de crédit et je confirme que les
+      renseignements fournis sont exacts.
+    </label>
+    <div class="invalid-feedback">Vous devez donner votre consentement pour continuer.</div>
+  </div>
+
+  <div class="mb-5 form-check">
+    <input class="form-check-input" type="checkbox" id="infolettre" name="infolettre">
+    <label class="form-check-label text-muted-custom" for="infolettre">
+      Recevoir les offres de FlexyBanque par courriel.
+    </label>
+  </div>
+
+  <div class="d-flex flex-column flex-sm-row gap-3">
+    <button type="submit" class="btn btn-primary-custom px-4" id="boutonEnvoyer">
+      <i class="bi bi-send me-2"></i>Envoyer ma demande
+    </button>
+    <button type="reset" class="btn btn-outline-custom px-4" id="boutonEffacer">
+      Effacer le formulaire
+    </button>
+  </div>
+</form>
+       <!--Fin Formulaire de demande de crédit -->
     </main>
   </div>
 
