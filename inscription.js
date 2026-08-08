@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
 
         if (label.find('.error-msg').length === 0) {
-            label.append('<span class="error-msg text-danger ms-2 fw-bold" style="font-size: 0.9em;">- ' + message + '</span>');
+            label.append('<span class="error-msg text-danger ms-2 fw-bold" style="font-size: 0.9em;">' + message + '</span>');
         }
     }
 
@@ -145,6 +145,40 @@ $(document).ready(function () {
                 throw new Error("Erreur : Le formulaire contient des champs invalides ou manquants. Vérifiez les champs en rouge pour corriger les erreurs.");
             }
 
+            // Récupeère la date d'aujourd'hui au bon format
+            const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+            const dateInscription = new Date().toLocaleDateString('fr-CA', optionsDate);
+
+            //Générer un numéro de client aléatoire pour le dashboard
+            const numClient = Math.floor(Math.random() * 9000000) + 1000000;
+
+            //Préparer l'adresse complète pour le tableau de bord
+            const adresseComplete = $('#adresse').val().trim() + ', ' +
+                $('#ville').val().trim() + ', ' +
+                $('#province').val() + ' ' +
+                $('#codePostal').val();
+
+            //Construire l'objet utilisateur
+            const utilisateur = {
+                nom: $('#prenom').val().trim() + ' ' + $('#nom').val().trim(),
+                courriel: $('#courriel').val().trim(),
+                numeroClient: numClient.toString(),
+                membreDepuis: dateInscription,
+                adresse: adresseComplete,
+                telephone: $('#telephone').val(),
+                statut: $('input[name="typeClient"]:checked').val(),
+                soldes: {
+                    carte: 0,
+                    cheque: 0,
+                    marge: 0,
+                    epargne: 0
+                }
+            };
+
+            //Enregistrer dans le sessionStorage
+            sessionStorage.setItem("utilisateurConnecte", JSON.stringify(utilisateur));
+
+            //Rediriger vers le tableau de bord
             window.location.href = "tableau-de-bord.html";
 
         } catch (error) {
